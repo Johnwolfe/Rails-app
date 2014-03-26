@@ -1,0 +1,10 @@
+<h1>Edit this user!</h1>
+
+
+<%= form_for @user do |f| %>
+	 <%=f.label :fname%>
+	 <%=f.text_field :fname %>
+	 <br>
+	 
+	 <%=f.submit :create %>
+<% end %>

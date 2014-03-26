@@ -1,0 +1,14 @@
+<h1>These are all the Users</h1>
+<hr>
+<% @users.each do |user| %>
+	 <%= user.fname   %>
+	<br>
+<% end %>	
+
+
+
+<%=link_to "delete User number one.", user_path(3),
+ {method: :delete} %>
+
+<%=link_to "create new post" %>
+
