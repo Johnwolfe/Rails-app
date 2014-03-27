@@ -1,4 +1,10 @@
-<% @posts.each do |post| %>
-<%=	post.body	%>
+<h1>Here are some posts</h1>
 
+<% @posts.each do |post| %>
+
+<%=	post.body	%>
+<br>
+<%=	post.created_at.strftime("%b %d, %Y")	%>
 <% end -%>
+
+

@@ -8,8 +8,14 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
-		@user = User.find(params[:id]).destroy
-	end
+    @user = User.where(id: params[:id]).first
+    if @user && @user.destroy
+      flash[:notice] = "User #{@user.fname} destroyed."
+    else
+      flash[:alert] = "There was a problem deleting that user."
+    end
+    redirect_to "/users"
+  	end
 	
 	def new
 	 	@user = User.new
